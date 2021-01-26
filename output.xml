@@ -1,0 +1,2076 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20210126 15:03:53.134" rpa="false">
+<suite id="s1" name="TestCases GET" source="C:\Users\renuk\PycharmProjects\Automation2021\TestCases_GET">
+<suite id="s1-s1" name="With Parameters" source="C:\Users\renuk\PycharmProjects\Automation2021\TestCases_GET\With_Parameters.robot">
+<test id="s1-s1-t1" name="TC_002_Get_Request_With_Parameters">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>${Base_URL}</arg>
+</arguments>
+<msg timestamp="20210126 15:03:53.702" level="INFO">Creating Session using : alias=GetSession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210126 15:03:53.702" endtime="20210126 15:03:53.703"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts/${Id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:53.836" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:53.836" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d66acc5ec06626b05e5eee3f0ede6d0941611691429; expires=Thu, 25-Feb-21 20:03:49 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1611638856', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '23776', 'cf-request-id': '07e1e4a7450000e714471f7000000001', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=D2DqH1Z43Z0CsEWkPZAXTO24QrJ7kTqKOXMABd2Ivl0h%2F2R%2FmGgn4s5Af4aWHqlaDmeP5m5wJdE58CHzY48P6e27%2FvZ57XOUnHFxM07phsceL11j1hs84wQA2hFY"}],"group":"cf-nel"}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '617cd6ebaadbe714-EWR', 'Content-Encoding': 'gzip'} 
+ body={
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+} 
+ </msg>
+<msg timestamp="20210126 15:03:53.836" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:53.704" endtime="20210126 15:03:53.836"></status>
+</kw>
+<kw name="Response_log_TC002" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts/${Id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:53.890" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': '__cfduid=d66acc5ec06626b05e5eee3f0ede6d0941611691429'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:53.890" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:49 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1611638856', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '23776', 'cf-request-id': '07e1e4a7a30000e71436b47000000001', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=eWqTosGA2Gw6o%2FmTO9TYuxMDIZ2wVkg3FprZZbWjoklynJTKJLGKnSTetTLM6PlI3u%2Bvmah8vQ2qslGgf3XB%2B6VeTOMpD1oUVvOmCWa0giZ6RrvFxO4Oki0JKAI%2B"}],"group":"cf-nel"}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '617cd6ec3baee714-EWR', 'Content-Encoding': 'gzip'} 
+ body={
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+} 
+ </msg>
+<msg timestamp="20210126 15:03:53.890" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:53.841" endtime="20210126 15:03:53.890"></status>
+</kw>
+<kw name="Response_log" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.890" endtime="20210126 15:03:53.895"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.896" endtime="20210126 15:03:53.897"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.897" endtime="20210126 15:03:53.898"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.898" endtime="20210126 15:03:53.899"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:53.890" endtime="20210126 15:03:53.899"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:53.840" endtime="20210126 15:03:53.899"></status>
+</kw>
+<kw name="Validate_StatusCode" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code_string}</var>
+</assign>
+<msg timestamp="20210126 15:03:53.902" level="INFO">${status_code_string} = 200</msg>
+<status status="PASS" starttime="20210126 15:03:53.902" endtime="20210126 15:03:53.902"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code_string}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.902" endtime="20210126 15:03:53.903"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The status code is verified.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.903" endtime="20210126 15:03:53.904"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:53.900" endtime="20210126 15:03:53.904"></status>
+</kw>
+<kw name="Validate_Header" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<assign>
+<var>${header_from_response}</var>
+</assign>
+<msg timestamp="20210126 15:03:53.906" level="INFO">${header_from_response} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20210126 15:03:53.905" endtime="20210126 15:03:53.906"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${header_from_response}</arg>
+<arg>application/json</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.906" endtime="20210126 15:03:53.906"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The Header contains Content-Type as applicarion/json.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.906" endtime="20210126 15:03:53.908"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:53.905" endtime="20210126 15:03:53.908"></status>
+</kw>
+<kw name="Validate_Cookies" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+<arg>__cfduid</arg>
+</arguments>
+<assign>
+<var>${cookie_value}</var>
+</assign>
+<msg timestamp="20210126 15:03:53.909" level="INFO">${cookie_value} = d66acc5ec06626b05e5eee3f0ede6d0941611691429</msg>
+<status status="PASS" starttime="20210126 15:03:53.909" endtime="20210126 15:03:53.909"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The cookie value is: ${cookie_value}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.909" endtime="20210126 15:03:53.910"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:53.909" endtime="20210126 15:03:53.910"></status>
+</kw>
+<kw name="Validate_ResponseContents" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:53.911" level="INFO">${res_body} = {
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nrepr...</msg>
+<status status="PASS" starttime="20210126 15:03:53.911" endtime="20210126 15:03:53.911"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>userId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.911" endtime="20210126 15:03:53.911"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.911" endtime="20210126 15:03:53.913"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>title</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.913" endtime="20210126 15:03:53.913"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.913" endtime="20210126 15:03:53.913"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:53.913" endtime="20210126 15:03:53.914"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:53.910" endtime="20210126 15:03:53.914"></status>
+</kw>
+<doc>This test case will validate the Get Respons for the url /posts/1</doc>
+<tags>
+<tag>APIValidation</tag>
+</tags>
+<status status="PASS" starttime="20210126 15:03:53.701" endtime="20210126 15:03:53.915" critical="yes"></status>
+</test>
+<test id="s1-s1-t2" name="TC_003_Get_Request_With_Parameters">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>${Base_URL}</arg>
+</arguments>
+<msg timestamp="20210126 15:03:53.917" level="INFO">Creating Session using : alias=GetSession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210126 15:03:53.917" endtime="20210126 15:03:53.918"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts/${Post_Id}/comments</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.206" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts/2/comments 
+ path_url=/posts/2/comments 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:54.206" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts/2/comments 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=d3d2d1058dabdc8160ee838a7c76b04391611691430; expires=Thu, 25-Feb-21 20:03:50 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '997', 'X-Ratelimit-Reset': '1611004585', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5fe-SNRxXTWeTmW/Q4d2qiV3mieyWj8"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '2037', 'cf-request-id': '07e1e4a8e000000cb54b95b000000001', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=wM%2BT2p4lgcCV7LfVVFypZff0lVfN6gX9N8XLUp%2Fe4wiwAF55t%2F9M5ohXx%2BEVVxQit2XYKArklT0NfTncOMQSVD%2Brc8dlS0SL9Hfc7TPSEXXWE9qExvJSD2RbFNXn"}],"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '617cd6ee3c700cb5-EWR'} 
+ body=[
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+  },
+  {
+    "postId": 2,
+    "id": 7,
+    "name": "repellat consequatur praesentium vel minus molestias voluptatum",
+    "email": "Dallas@ole.me",
+    "body": "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+  },
+  {
+    "postId": 2,
+    "id": 8,
+    "name": "et omnis dolorem",
+    "email": "Mallory_Kunze@marie.org",
+    "body": "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+  },
+  {
+    "postId": 2,
+    "id": 9,
+    "name": "provident id voluptas",
+    "email": "Meghan_Littel@rene.us",
+    "body": "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+  },
+  {
+    "postId": 2,
+    "id": 10,
+    "name": "eaque et deleniti atque tenetur ut quo ut",
+    "email": "Carmen_Keeling@caroline.name",
+    "body": "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
+  }
+] 
+ </msg>
+<msg timestamp="20210126 15:03:54.206" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:53.918" endtime="20210126 15:03:54.206"></status>
+</kw>
+<kw name="Response_log_TC003" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts/${Post_Id}/comments</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.253" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts/2/comments 
+ path_url=/posts/2/comments 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': '__cfduid=d3d2d1058dabdc8160ee838a7c76b04391611691430'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:54.253" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts/2/comments 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '997', 'X-Ratelimit-Reset': '1611004585', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5fe-SNRxXTWeTmW/Q4d2qiV3mieyWj8"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '2037', 'cf-request-id': '07e1e4a90f00000cb51c010000000001', 'Report-To': '{"max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=4awFBDdDkQuvc38QkOSqVeGs3lDD4jfj2PDv7oLZhhQWXNH43cHUZYBUJnHugW%2BcUartBvyKi1e%2BfIMblin88LGrR2nfQ9ckqs%2BDJ8V79ohgqoT%2FMH0yCgbWSN71"}],"group":"cf-nel"}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '617cd6ee7d3f0cb5-EWR'} 
+ body=[
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+  },
+  {
+    "postId": 2,
+    "id": 7,
+    "name": "repellat consequatur praesentium vel minus molestias voluptatum",
+    "email": "Dallas@ole.me",
+    "body": "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+  },
+  {
+    "postId": 2,
+    "id": 8,
+    "name": "et omnis dolorem",
+    "email": "Mallory_Kunze@marie.org",
+    "body": "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+  },
+  {
+    "postId": 2,
+    "id": 9,
+    "name": "provident id voluptas",
+    "email": "Meghan_Littel@rene.us",
+    "body": "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+  },
+  {
+    "postId": 2,
+    "id": 10,
+    "name": "eaque et deleniti atque tenetur ut quo ut",
+    "email": "Carmen_Keeling@caroline.name",
+    "body": "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
+  }
+] 
+ </msg>
+<msg timestamp="20210126 15:03:54.253" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:54.212" endtime="20210126 15:03:54.253"></status>
+</kw>
+<kw name="Response_log" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.253" endtime="20210126 15:03:54.266"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.268" endtime="20210126 15:03:54.277"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.278" endtime="20210126 15:03:54.280"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.280" endtime="20210126 15:03:54.281"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.253" endtime="20210126 15:03:54.281"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.211" endtime="20210126 15:03:54.281"></status>
+</kw>
+<kw name="Validate_StatusCode" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code_string}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.283" level="INFO">${status_code_string} = 200</msg>
+<status status="PASS" starttime="20210126 15:03:54.282" endtime="20210126 15:03:54.283"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code_string}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.283" endtime="20210126 15:03:54.283"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The status code is verified.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.285" endtime="20210126 15:03:54.285"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.282" endtime="20210126 15:03:54.285"></status>
+</kw>
+<kw name="Validate_Header" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<assign>
+<var>${header_from_response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.287" level="INFO">${header_from_response} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20210126 15:03:54.287" endtime="20210126 15:03:54.287"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${header_from_response}</arg>
+<arg>application/json</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.287" endtime="20210126 15:03:54.287"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The Header contains Content-Type as applicarion/json.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.287" endtime="20210126 15:03:54.289"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.286" endtime="20210126 15:03:54.289"></status>
+</kw>
+<kw name="Validate_Cookies" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+<arg>__cfduid</arg>
+</arguments>
+<assign>
+<var>${cookie_value}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.290" level="INFO">${cookie_value} = d3d2d1058dabdc8160ee838a7c76b04391611691430</msg>
+<status status="PASS" starttime="20210126 15:03:54.290" endtime="20210126 15:03:54.290"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The cookie value is: ${cookie_value}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.290" endtime="20210126 15:03:54.291"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.290" endtime="20210126 15:03:54.291"></status>
+</kw>
+<kw name="Validate_ResponseContents_Comments" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.292" level="INFO">${res_body} = [
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt con...</msg>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>postId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>name</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.292" endtime="20210126 15:03:54.292"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.291" endtime="20210126 15:03:54.292"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${json}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.297" level="INFO">${json} = [{'postId': 2, 'id': 6, 'name': 'et fugit eligendi deleniti quidem qui sint nihil autem', 'email': 'Presley.Mueller@myrl.com', 'body': 'doloribus at sed quis culpa deserunt consectetur qui praesentium...</msg>
+<status status="PASS" starttime="20210126 15:03:54.297" endtime="20210126 15:03:54.297"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${json}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.298" endtime="20210126 15:03:54.299"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json}</arg>
+<arg>$[?(@.id)].id</arg>
+</arguments>
+<assign>
+<var>@{Id_list}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.347" level="INFO">@{Id_list} = [ 6 | 7 | 8 | 9 | 10 ]</msg>
+<status status="PASS" starttime="20210126 15:03:54.299" endtime="20210126 15:03:54.347"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Id_list}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.350" endtime="20210126 15:03:54.350"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${Id_list}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.351" level="INFO">Length is 5</msg>
+<msg timestamp="20210126 15:03:54.351" level="INFO">${length} = 5</msg>
+<status status="PASS" starttime="20210126 15:03:54.351" endtime="20210126 15:03:54.351"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The length of the json as per id is : ${length}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.352" endtime="20210126 15:03:54.353"></status>
+</kw>
+<kw name="${i} IN [ ${length} ]" type="for">
+<kw name="${i} = 5" type="foritem">
+<kw name="Validate_ResponseContents_Comments" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.354" level="INFO">${res_body} = [
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt con...</msg>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>postId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>name</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.354"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.353" endtime="20210126 15:03:54.354"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.354" endtime="20210126 15:03:54.358"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.353" endtime="20210126 15:03:54.358"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.353" endtime="20210126 15:03:54.358"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for GET API.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.358" endtime="20210126 15:03:54.359"></status>
+</kw>
+<doc>This takes the parameters refering to the url as /posts/1/comments</doc>
+<tags>
+<tag>APIValidation</tag>
+</tags>
+<status status="PASS" starttime="20210126 15:03:53.916" endtime="20210126 15:03:54.359" critical="yes"></status>
+</test>
+<test id="s1-s1-t3" name="TC_004_Get_Request_With_Parameters">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>${Base_URL}</arg>
+</arguments>
+<msg timestamp="20210126 15:03:54.363" level="INFO">Creating Session using : alias=GetSession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210126 15:03:54.363" endtime="20210126 15:03:54.363"></status>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<arguments>
+<arg>postId=${Post_Id}</arg>
+</arguments>
+<assign>
+<var>&amp;{param}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.365" level="INFO">&amp;{param} = { postId=2 }</msg>
+<status status="PASS" starttime="20210126 15:03:54.363" endtime="20210126 15:03:54.365"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/comments</arg>
+<arg>params=${param}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.447" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/comments?postId=2 
+ path_url=/comments?postId=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:54.447" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/comments?postId=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=da41498f63d7d6225adc77853c6d269821611691430; expires=Thu, 25-Feb-21 20:03:50 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1611432955', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5fe-SNRxXTWeTmW/Q4d2qiV3mieyWj8"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'REVALIDATED', 'cf-request-id': '07e1e4a9b70000f05948a82000000001', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=dCxZtUGgB2OrAecwKxgeHWJVuNvt9RooPRhFAGFmt%2B8eUpgcgdmoSqFryTrzeKxVaDjFxt9dapW439TvOsNqatIsPM7rkkEvhG11bGA0Inu3riSzpjwpxk2uU50Z"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '617cd6ef88b9f059-EWR'} 
+ body=[
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+  },
+  {
+    "postId": 2,
+    "id": 7,
+    "name": "repellat consequatur praesentium vel minus molestias voluptatum",
+    "email": "Dallas@ole.me",
+    "body": "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+  },
+  {
+    "postId": 2,
+    "id": 8,
+    "name": "et omnis dolorem",
+    "email": "Mallory_Kunze@marie.org",
+    "body": "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+  },
+  {
+    "postId": 2,
+    "id": 9,
+    "name": "provident id voluptas",
+    "email": "Meghan_Littel@rene.us",
+    "body": "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+  },
+  {
+    "postId": 2,
+    "id": 10,
+    "name": "eaque et deleniti atque tenetur ut quo ut",
+    "email": "Carmen_Keeling@caroline.name",
+    "body": "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
+  }
+] 
+ </msg>
+<msg timestamp="20210126 15:03:54.447" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:54.365" endtime="20210126 15:03:54.447"></status>
+</kw>
+<kw name="Response_log_TC004" library="Resources">
+<arguments>
+<arg>${response}</arg>
+<arg>${param}</arg>
+</arguments>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/comments</arg>
+<arg>params=${param}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.487" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/comments?postId=2 
+ path_url=/comments?postId=2 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': '__cfduid=da41498f63d7d6225adc77853c6d269821611691430'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:54.487" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/comments?postId=2 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1611432955', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"5fe-SNRxXTWeTmW/Q4d2qiV3mieyWj8"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '0', 'cf-request-id': '07e1e4aa000000f05916819000000001', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=5rQtbgZ7WGLk9kcAErPwtV3Hn0iTywVMwmY4h868ex06lFlzZx3XQEA748FXnc8vYSekUuQcmfmBixx%2BjmdiCJhXIefeNyd3dDfEMwyNvskqVHTaJcrymQxTuasA"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '617cd6eff9c4f059-EWR'} 
+ body=[
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt consectetur qui praesentium\naccusamus fugiat dicta\nvoluptatem rerum ut voluptate autem\nvoluptatem repellendus aspernatur dolorem in"
+  },
+  {
+    "postId": 2,
+    "id": 7,
+    "name": "repellat consequatur praesentium vel minus molestias voluptatum",
+    "email": "Dallas@ole.me",
+    "body": "maiores sed dolores similique labore et inventore et\nquasi temporibus esse sunt id et\neos voluptatem aliquam\naliquid ratione corporis molestiae mollitia quia et magnam dolor"
+  },
+  {
+    "postId": 2,
+    "id": 8,
+    "name": "et omnis dolorem",
+    "email": "Mallory_Kunze@marie.org",
+    "body": "ut voluptatem corrupti velit\nad voluptatem maiores\net nisi velit vero accusamus maiores\nvoluptates quia aliquid ullam eaque"
+  },
+  {
+    "postId": 2,
+    "id": 9,
+    "name": "provident id voluptas",
+    "email": "Meghan_Littel@rene.us",
+    "body": "sapiente assumenda molestiae atque\nadipisci laborum distinctio aperiam et ab ut omnis\net occaecati aspernatur odit sit rem expedita\nquas enim ipsam minus"
+  },
+  {
+    "postId": 2,
+    "id": 10,
+    "name": "eaque et deleniti atque tenetur ut quo ut",
+    "email": "Carmen_Keeling@caroline.name",
+    "body": "voluptate iusto quis nobis reprehenderit ipsum amet nulla\nquia quas dolores velit et non\naut quia necessitatibus\nnostrum quaerat nulla et accusamus nisi facilis"
+  }
+] 
+ </msg>
+<msg timestamp="20210126 15:03:54.487" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:54.455" endtime="20210126 15:03:54.487"></status>
+</kw>
+<kw name="Response_log" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.487" endtime="20210126 15:03:54.494"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.494" endtime="20210126 15:03:54.498"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.499" endtime="20210126 15:03:54.502"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.503" endtime="20210126 15:03:54.515"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.487" endtime="20210126 15:03:54.516"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.452" endtime="20210126 15:03:54.516"></status>
+</kw>
+<kw name="Validate_StatusCode" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code_string}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.518" level="INFO">${status_code_string} = 200</msg>
+<status status="PASS" starttime="20210126 15:03:54.518" endtime="20210126 15:03:54.518"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code_string}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.518" endtime="20210126 15:03:54.518"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The status code is verified.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.518" endtime="20210126 15:03:54.518"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.517" endtime="20210126 15:03:54.518"></status>
+</kw>
+<kw name="Validate_Header" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<assign>
+<var>${header_from_response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.522" level="INFO">${header_from_response} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20210126 15:03:54.521" endtime="20210126 15:03:54.522"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${header_from_response}</arg>
+<arg>application/json</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.522" endtime="20210126 15:03:54.522"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The Header contains Content-Type as applicarion/json.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.522" endtime="20210126 15:03:54.523"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.521" endtime="20210126 15:03:54.523"></status>
+</kw>
+<kw name="Validate_Cookies" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+<arg>__cfduid</arg>
+</arguments>
+<assign>
+<var>${cookie_value}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.525" level="INFO">${cookie_value} = da41498f63d7d6225adc77853c6d269821611691430</msg>
+<status status="PASS" starttime="20210126 15:03:54.524" endtime="20210126 15:03:54.525"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The cookie value is: ${cookie_value}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.525" endtime="20210126 15:03:54.526"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.523" endtime="20210126 15:03:54.526"></status>
+</kw>
+<kw name="Validate_ResponseContents_Comments" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.528" level="INFO">${res_body} = [
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt con...</msg>
+<status status="PASS" starttime="20210126 15:03:54.528" endtime="20210126 15:03:54.528"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>postId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.528" endtime="20210126 15:03:54.530"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.530" endtime="20210126 15:03:54.531"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>name</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.531" endtime="20210126 15:03:54.531"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.531" endtime="20210126 15:03:54.531"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.531" endtime="20210126 15:03:54.531"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.531" endtime="20210126 15:03:54.535"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.527" endtime="20210126 15:03:54.535"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${json}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.537" level="INFO">${json} = [{'postId': 2, 'id': 6, 'name': 'et fugit eligendi deleniti quidem qui sint nihil autem', 'email': 'Presley.Mueller@myrl.com', 'body': 'doloribus at sed quis culpa deserunt consectetur qui praesentium...</msg>
+<status status="PASS" starttime="20210126 15:03:54.536" endtime="20210126 15:03:54.537"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${json}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.537" endtime="20210126 15:03:54.538"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json}</arg>
+<arg>$[?(@.id)].id</arg>
+</arguments>
+<assign>
+<var>@{Id_list}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.586" level="INFO">@{Id_list} = [ 6 | 7 | 8 | 9 | 10 ]</msg>
+<status status="PASS" starttime="20210126 15:03:54.538" endtime="20210126 15:03:54.586"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Id_list}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.592" endtime="20210126 15:03:54.593"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${Id_list}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.593" level="INFO">Length is 5</msg>
+<msg timestamp="20210126 15:03:54.593" level="INFO">${length} = 5</msg>
+<status status="PASS" starttime="20210126 15:03:54.593" endtime="20210126 15:03:54.593"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The length of the json as per id is : ${length}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.594" endtime="20210126 15:03:54.594"></status>
+</kw>
+<kw name="${i} IN [ ${length} ]" type="for">
+<kw name="${i} = 5" type="foritem">
+<kw name="Validate_ResponseContents_Comments" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.595" level="INFO">${res_body} = [
+  {
+    "postId": 2,
+    "id": 6,
+    "name": "et fugit eligendi deleniti quidem qui sint nihil autem",
+    "email": "Presley.Mueller@myrl.com",
+    "body": "doloribus at sed quis culpa deserunt con...</msg>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>postId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>name</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>email</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.595"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.600"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.595" endtime="20210126 15:03:54.600"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.594" endtime="20210126 15:03:54.600"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for GET API.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.600" endtime="20210126 15:03:54.601"></status>
+</kw>
+<doc>This takes the parameters refering to the url as /comments?postId=2</doc>
+<tags>
+<tag>APIValidation</tag>
+<tag>Check</tag>
+</tags>
+<status status="PASS" starttime="20210126 15:03:54.362" endtime="20210126 15:03:54.601" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210126 15:03:53.175" endtime="20210126 15:03:54.602"></status>
+</suite>
+<suite id="s1-s2" name="Without Parameters" source="C:\Users\renuk\PycharmProjects\Automation2021\TestCases_GET\Without_Parameters.robot">
+<test id="s1-s2-t1" name="TC_001_Get_Request_Without_Parameters">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>${Base_URL}</arg>
+</arguments>
+<msg timestamp="20210126 15:03:54.615" level="INFO">Creating Session using : alias=GetSession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210126 15:03:54.613" endtime="20210126 15:03:54.615"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.669" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts 
+ path_url=/posts 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:54.669" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Set-Cookie': '__cfduid=df3def82a3985962d47949012f08a48e71611691430; expires=Thu, 25-Feb-21 20:03:50 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1611641136', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"6b80-Ybsq/K6GwwqrYkAsFxqDXGC7DoM"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '21540', 'cf-request-id': '07e1e4aab000000c999f056000000001', 'Report-To': '{"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=VyKEb1sj003Jr94iHhSOdA2q6P19Ss3Ku9FyO9CTM25Ur4rf4rtgL0LGRzcAiSiP8VRie42c%2BTxyTT5o6XN2FY0p94DOq007CPWSHI5u%2FJt65mCNYac1WQnyDUr3"}],"max_age":604800}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '617cd6f1184f0c99-EWR'} 
+ body=[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "nesciunt quas odio",
+    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+  },
+  {
+    "userId": 1,
+    "id": 6,
+    "title": "dolorem eum magni eos aperiam quia",
+    "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+  },
+  {
+    "userId": 1,
+    "id": 7,
+    "title": "magnam facilis autem",
+    "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+  },
+  {
+    "userId": 1,
+    "id": 8,
+    "title": "dolorem dolore est ipsam",
+    "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
+  },
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "nesciunt iure omnis dolorem tempora et accusantium",
+    "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "optio molestias id quia eum",
+    "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+  },
+  {
+    "userId": 2,
+    "id": 11,
+    "title": "et ea vero quia laudantium autem",
+    "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
+  },
+  {
+    "userId": 2,
+    "id": 12,
+    "title": "in quibusdam tempore odit est dolorem",
+    "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
+  },
+  {
+    "userId": 2,
+    "id": 13,
+    "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+    "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
+  },
+  {
+    "userId": 2,
+    "id": 14,
+    "title": "voluptatem eligendi optio",
+    "body": "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum"
+  },
+  {
+    "userId": 2,
+    "id": 15,
+    "title": "eveniet quod temporibus",
+    "body": "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae"
+  },
+  {
+    "userId": 2,
+    "id": 16,
+    "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
+    "body": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nvoluptatem quis ullam qui in alias quia est\nconsequatur magni mollitia accusamus ea nisi voluptate dicta"
+  },
+  {
+    "userId": 2,
+    "id": 17,
+    "title": "fugit voluptas sed molestias voluptatem provident",
+    "body": "eos voluptas et aut odit natus earum\naspernatur fuga molestiae ullam\ndeserunt ratione qui eos\nqui nihil ratione nemo velit ut aut id quo"
+  },
+  {
+    "userId": 2,
+    "id": 18,
+    "title": "voluptate et itaque vero tempora molestiae",
+    "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam"
+  },
+  {
+    "userId": 2,
+    "id": 19,
+    "title": "adipisci placeat illum aut reiciendis qui",
+    "body": "illum quis cupiditate provident sit magnam\nea sed aut omnis\nveniam maiores ullam consequatur atque\nadipisci quo iste expedita sit quos voluptas"
+  },
+  {
+    "userId": 2,
+    "id": 20,
+    "title": "doloribus ad provident suscipit at",
+    "body": "qui consequuntur ducimus possimus quisquam amet similique\nsuscipit porro ipsam amet\neos veritatis officiis exercitationem vel fugit aut necessitatibus totam\nomnis rerum consequatur expedita quidem cumque explicabo"
+  },
+  {
+    "userId": 3,
+    "id": 21,
+    "title": "asperiores ea ipsam voluptatibus modi minima quia sint",
+    "body": "repellat aliquid praesentium dolorem quo\nsed totam minus non itaque\nnihil labore molestiae sunt dolor eveniet hic recusandae veniam\ntempora et tenetur expedita sunt"
+  },
+  {
+    "userId": 3,
+    "id": 22,
+    "title": "dolor sint quo a velit explicabo quia nam",
+    "body": "eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse"
+  },
+  {
+    "userId": 3,
+    "id": 23,
+    "title": "maxime id vitae nihil numquam",
+    "body": "veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis"
+  },
+  {
+    "userId": 3,
+    "id": 24,
+    "title": "autem hic labore sunt dolores incidunt",
+    "body": "enim et ex nulla\nomnis voluptas quia qui\nvoluptatem consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt"
+  },
+  {
+    "userId": 3,
+    "id": 25,
+    "title": "rem alias distinctio quo quis",
+    "body": "ullam consequatur ut\nomnis quis sit vel consequuntur\nipsa eligendi ipsum molestiae et omnis error nostrum\nmolestiae illo tempore quia et distinctio"
+  },
+  {
+    "userId": 3,
+    "id": 26,
+    "title": "est et quae odit qui non",
+    "body": "similique esse doloribus nihil accusamus\nomnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus\nperspiciatis cum ut laudantium\nomnis aut molestiae vel vero"
+  },
+  {
+    "userId": 3,
+    "id": 27,
+    "title": "quasi id et eos tenetur aut quo autem",
+    "body": "eum sed dolores ipsam sint possimus debitis occaecati\ndebitis qui qui et\nut placeat enim earum aut odit facilis\nconsequatur suscipit necessitatibus rerum sed inventore temporibus consequatur"
+  },
+  {
+    "userId": 3,
+    "id": 28,
+    "title": "delectus ullam et corporis nulla voluptas sequi",
+    "body": "non et quaerat ex quae ad maiores\nmaiores recusandae totam aut blanditiis mollitia quas illo\nut voluptatibus voluptatem\nsimilique nostrum eum"
+  },
+  {
+    "userId": 3,
+    "id": 29,
+    "title": "iusto eius quod necessitatibus culpa ea",
+    "body": "odit magnam ut saepe sed non qui\ntempora atque nihil\naccusamus illum doloribus illo dolor\neligendi repudiandae odit magni similique sed cum maiores"
+  },
+  {
+    "userId": 3,
+    "id": 30,
+    "title": "a quo magni similique perferendis",
+    "body": "alias dolor cumque\nimpedit blanditiis non eveniet odio maxime\nblanditiis amet eius quis tempora quia autem rem\na provident perspiciatis quia"
+  },
+  {
+    "userId": 4,
+    "id": 31,
+    "title": "ullam ut quidem id aut vel consequuntur",
+    "body": "debitis eius sed quibusdam non quis consectetur vitae\nimpedit ut qui consequatur sed aut in\nquidem sit nostrum et maiores adipisci atque\nquaerat voluptatem adipisci repudiandae"
+  },
+  {
+    "userId": 4,
+    "id": 32,
+    "title": "doloremque illum aliquid sunt",
+    "body": "deserunt eos nobis asperiores et hic\nest debitis repellat molestiae optio\nnihil ratione ut eos beatae quibusdam distinctio maiores\nearum voluptates et aut adipisci ea maiores voluptas maxime"
+  },
+  {
+    "userId": 4,
+    "id": 33,
+    "title": "qui explicabo molestiae dolorem",
+    "body": "rerum ut et numquam laborum odit est sit\nid qui sint in\nquasi tenetur tempore aperiam et quaerat qui in\nrerum officiis sequi cumque quod"
+  },
+  {
+    "userId": 4,
+    "id": 34,
+    "title": "magnam ut rerum iure",
+    "body": "ea velit perferendis earum ut voluptatem voluptate itaque iusto\ntotam pariatur in\nnemo voluptatem voluptatem autem magni tempora minima in\nest distinctio qui assumenda accusamus dignissimos officia nesciunt nobis"
+  },
+  {
+    "userId": 4,
+    "id": 35,
+    "title": "id nihil consequatur molestias animi provident",
+    "body": "nisi error delectus possimus ut eligendi vitae\nplaceat eos harum cupiditate facilis reprehenderit voluptatem beatae\nmodi ducimus quo illum voluptas eligendi\net nobis quia fugit"
+  },
+  {
+    "userId": 4,
+    "id": 36,
+    "title": "fuga nam accusamus voluptas reiciendis itaque",
+    "body": "ad mollitia et omnis minus architecto odit\nvoluptas doloremque maxime aut non ipsa qui alias veniam\nblanditiis culpa aut quia nihil cumque facere et occaecati\nqui aspernatur quia eaque ut aperiam inventore"
+  },
+  {
+    "userId": 4,
+    "id": 37,
+    "title": "provident vel ut sit ratione est... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210126 15:03:54.669" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:54.616" endtime="20210126 15:03:54.669"></status>
+</kw>
+<kw name="Response_log_TC001" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts/</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.713" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts/ 
+ path_url=/posts/ 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Cookie': '__cfduid=df3def82a3985962d47949012f08a48e71611691430'} 
+ body=None 
+ </msg>
+<msg timestamp="20210126 15:03:54.718" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts/ 
+ status=200, reason=OK 
+ headers={'Date': 'Tue, 26 Jan 2021 20:03:50 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1607574725', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"6b80-Ybsq/K6GwwqrYkAsFxqDXGC7DoM"', 'Content-Encoding': 'gzip', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '21934', 'cf-request-id': '07e1e4aadf00000c99f6ba2000000001', 'Report-To': '{"group":"cf-nel","endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=saBt1FRoKJWYyeE7pG9R7IPMakdd42Hr7ZF1c1gODTNZPcM8q%2BJvHHtVt0jGVzU2onVMTfLTy1LAG3WaXiI4y6Q4lLdb3UeZaw5ySBysq2rd5RvbwBVRR%2Bumaivt"}],"max_age":604800}', 'NEL': '{"max_age":604800,"report_to":"cf-nel"}', 'Server': 'cloudflare', 'CF-RAY': '617cd6f169230c99-EWR'} 
+ body=[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "nesciunt quas odio",
+    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+  },
+  {
+    "userId": 1,
+    "id": 6,
+    "title": "dolorem eum magni eos aperiam quia",
+    "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+  },
+  {
+    "userId": 1,
+    "id": 7,
+    "title": "magnam facilis autem",
+    "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+  },
+  {
+    "userId": 1,
+    "id": 8,
+    "title": "dolorem dolore est ipsam",
+    "body": "dignissimos aperiam dolorem qui eum\nfacilis quibusdam animi sint suscipit qui sint possimus cum\nquaerat magni maiores excepturi\nipsam ut commodi dolor voluptatum modi aut vitae"
+  },
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "nesciunt iure omnis dolorem tempora et accusantium",
+    "body": "consectetur animi nesciunt iure dolore\nenim quia ad\nveniam autem ut quam aut nobis\net est aut quod aut provident voluptas autem voluptas"
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "optio molestias id quia eum",
+    "body": "quo et expedita modi cum officia vel magni\ndoloribus qui repudiandae\nvero nisi sit\nquos veniam quod sed accusamus veritatis error"
+  },
+  {
+    "userId": 2,
+    "id": 11,
+    "title": "et ea vero quia laudantium autem",
+    "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus\naccusamus in eum beatae sit\nvel qui neque voluptates ut commodi qui incidunt\nut animi commodi"
+  },
+  {
+    "userId": 2,
+    "id": 12,
+    "title": "in quibusdam tempore odit est dolorem",
+    "body": "itaque id aut magnam\npraesentium quia et ea odit et ea voluptas et\nsapiente quia nihil amet occaecati quia id voluptatem\nincidunt ea est distinctio odio"
+  },
+  {
+    "userId": 2,
+    "id": 13,
+    "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+    "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque\niste corrupti reiciendis voluptatem eius rerum\nsit cumque quod eligendi laborum minima\nperferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
+  },
+  {
+    "userId": 2,
+    "id": 14,
+    "title": "voluptatem eligendi optio",
+    "body": "fuga et accusamus dolorum perferendis illo voluptas\nnon doloremque neque facere\nad qui dolorum molestiae beatae\nsed aut voluptas totam sit illum"
+  },
+  {
+    "userId": 2,
+    "id": 15,
+    "title": "eveniet quod temporibus",
+    "body": "reprehenderit quos placeat\nvelit minima officia dolores impedit repudiandae molestiae nam\nvoluptas recusandae quis delectus\nofficiis harum fugiat vitae"
+  },
+  {
+    "userId": 2,
+    "id": 16,
+    "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
+    "body": "suscipit nam nisi quo aperiam aut\nasperiores eos fugit maiores voluptatibus quia\nvoluptatem quis ullam qui in alias quia est\nconsequatur magni mollitia accusamus ea nisi voluptate dicta"
+  },
+  {
+    "userId": 2,
+    "id": 17,
+    "title": "fugit voluptas sed molestias voluptatem provident",
+    "body": "eos voluptas et aut odit natus earum\naspernatur fuga molestiae ullam\ndeserunt ratione qui eos\nqui nihil ratione nemo velit ut aut id quo"
+  },
+  {
+    "userId": 2,
+    "id": 18,
+    "title": "voluptate et itaque vero tempora molestiae",
+    "body": "eveniet quo quis\nlaborum totam consequatur non dolor\nut et est repudiandae\nest voluptatem vel debitis et magnam"
+  },
+  {
+    "userId": 2,
+    "id": 19,
+    "title": "adipisci placeat illum aut reiciendis qui",
+    "body": "illum quis cupiditate provident sit magnam\nea sed aut omnis\nveniam maiores ullam consequatur atque\nadipisci quo iste expedita sit quos voluptas"
+  },
+  {
+    "userId": 2,
+    "id": 20,
+    "title": "doloribus ad provident suscipit at",
+    "body": "qui consequuntur ducimus possimus quisquam amet similique\nsuscipit porro ipsam amet\neos veritatis officiis exercitationem vel fugit aut necessitatibus totam\nomnis rerum consequatur expedita quidem cumque explicabo"
+  },
+  {
+    "userId": 3,
+    "id": 21,
+    "title": "asperiores ea ipsam voluptatibus modi minima quia sint",
+    "body": "repellat aliquid praesentium dolorem quo\nsed totam minus non itaque\nnihil labore molestiae sunt dolor eveniet hic recusandae veniam\ntempora et tenetur expedita sunt"
+  },
+  {
+    "userId": 3,
+    "id": 22,
+    "title": "dolor sint quo a velit explicabo quia nam",
+    "body": "eos qui et ipsum ipsam suscipit aut\nsed omnis non odio\nexpedita earum mollitia molestiae aut atque rem suscipit\nnam impedit esse"
+  },
+  {
+    "userId": 3,
+    "id": 23,
+    "title": "maxime id vitae nihil numquam",
+    "body": "veritatis unde neque eligendi\nquae quod architecto quo neque vitae\nest illo sit tempora doloremque fugit quod\net et vel beatae sequi ullam sed tenetur perspiciatis"
+  },
+  {
+    "userId": 3,
+    "id": 24,
+    "title": "autem hic labore sunt dolores incidunt",
+    "body": "enim et ex nulla\nomnis voluptas quia qui\nvoluptatem consequatur numquam aliquam sunt\ntotam recusandae id dignissimos aut sed asperiores deserunt"
+  },
+  {
+    "userId": 3,
+    "id": 25,
+    "title": "rem alias distinctio quo quis",
+    "body": "ullam consequatur ut\nomnis quis sit vel consequuntur\nipsa eligendi ipsum molestiae et omnis error nostrum\nmolestiae illo tempore quia et distinctio"
+  },
+  {
+    "userId": 3,
+    "id": 26,
+    "title": "est et quae odit qui non",
+    "body": "similique esse doloribus nihil accusamus\nomnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus\nperspiciatis cum ut laudantium\nomnis aut molestiae vel vero"
+  },
+  {
+    "userId": 3,
+    "id": 27,
+    "title": "quasi id et eos tenetur aut quo autem",
+    "body": "eum sed dolores ipsam sint possimus debitis occaecati\ndebitis qui qui et\nut placeat enim earum aut odit facilis\nconsequatur suscipit necessitatibus rerum sed inventore temporibus consequatur"
+  },
+  {
+    "userId": 3,
+    "id": 28,
+    "title": "delectus ullam et corporis nulla voluptas sequi",
+    "body": "non et quaerat ex quae ad maiores\nmaiores recusandae totam aut blanditiis mollitia quas illo\nut voluptatibus voluptatem\nsimilique nostrum eum"
+  },
+  {
+    "userId": 3,
+    "id": 29,
+    "title": "iusto eius quod necessitatibus culpa ea",
+    "body": "odit magnam ut saepe sed non qui\ntempora atque nihil\naccusamus illum doloribus illo dolor\neligendi repudiandae odit magni similique sed cum maiores"
+  },
+  {
+    "userId": 3,
+    "id": 30,
+    "title": "a quo magni similique perferendis",
+    "body": "alias dolor cumque\nimpedit blanditiis non eveniet odio maxime\nblanditiis amet eius quis tempora quia autem rem\na provident perspiciatis quia"
+  },
+  {
+    "userId": 4,
+    "id": 31,
+    "title": "ullam ut quidem id aut vel consequuntur",
+    "body": "debitis eius sed quibusdam non quis consectetur vitae\nimpedit ut qui consequatur sed aut in\nquidem sit nostrum et maiores adipisci atque\nquaerat voluptatem adipisci repudiandae"
+  },
+  {
+    "userId": 4,
+    "id": 32,
+    "title": "doloremque illum aliquid sunt",
+    "body": "deserunt eos nobis asperiores et hic\nest debitis repellat molestiae optio\nnihil ratione ut eos beatae quibusdam distinctio maiores\nearum voluptates et aut adipisci ea maiores voluptas maxime"
+  },
+  {
+    "userId": 4,
+    "id": 33,
+    "title": "qui explicabo molestiae dolorem",
+    "body": "rerum ut et numquam laborum odit est sit\nid qui sint in\nquasi tenetur tempore aperiam et quaerat qui in\nrerum officiis sequi cumque quod"
+  },
+  {
+    "userId": 4,
+    "id": 34,
+    "title": "magnam ut rerum iure",
+    "body": "ea velit perferendis earum ut voluptatem voluptate itaque iusto\ntotam pariatur in\nnemo voluptatem voluptatem autem magni tempora minima in\nest distinctio qui assumenda accusamus dignissimos officia nesciunt nobis"
+  },
+  {
+    "userId": 4,
+    "id": 35,
+    "title": "id nihil consequatur molestias animi provident",
+    "body": "nisi error delectus possimus ut eligendi vitae\nplaceat eos harum cupiditate facilis reprehenderit voluptatem beatae\nmodi ducimus quo illum voluptas eligendi\net nobis quia fugit"
+  },
+  {
+    "userId": 4,
+    "id": 36,
+    "title": "fuga nam accusamus voluptas reiciendis itaque",
+    "body": "ad mollitia et omnis minus architecto odit\nvoluptas doloremque maxime aut non ipsa qui alias veniam\nblanditiis culpa aut quia nihil cumque facere et occaecati\nqui aspernatur quia eaque ut aperiam inventore"
+  },
+  {
+    "userId": 4,
+    "id": 37,
+    "title": "provident vel ut sit ratione est... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20210126 15:03:54.720" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210126 15:03:54.676" endtime="20210126 15:03:54.720"></status>
+</kw>
+<kw name="Response_log" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.720" endtime="20210126 15:03:54.760"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.760" endtime="20210126 15:03:54.763"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.763" endtime="20210126 15:03:54.786"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.786" endtime="20210126 15:03:54.787"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.720" endtime="20210126 15:03:54.787"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.676" endtime="20210126 15:03:54.787"></status>
+</kw>
+<kw name="Validate_StatusCode" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<assign>
+<var>${status_code_string}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.789" level="INFO">${status_code_string} = 200</msg>
+<status status="PASS" starttime="20210126 15:03:54.789" endtime="20210126 15:03:54.789"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${status_code_string}</arg>
+<arg>200</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.789" endtime="20210126 15:03:54.789"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The status code is verified.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.791" endtime="20210126 15:03:54.791"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.788" endtime="20210126 15:03:54.791"></status>
+</kw>
+<kw name="Validate_Header" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+</arguments>
+<assign>
+<var>${header_from_response}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.793" level="INFO">${header_from_response} = application/json; charset=utf-8</msg>
+<status status="PASS" starttime="20210126 15:03:54.793" endtime="20210126 15:03:54.793"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${header_from_response}</arg>
+<arg>application/json</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.793" endtime="20210126 15:03:54.793"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The Header contains Content-Type as applicarion/json.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.793" endtime="20210126 15:03:54.793"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.792" endtime="20210126 15:03:54.793"></status>
+</kw>
+<kw name="Validate_Cookies" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Get From Dictionary" library="Collections">
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+<arg>__cfduid</arg>
+</arguments>
+<assign>
+<var>${cookie_value}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.797" level="INFO">${cookie_value} = df3def82a3985962d47949012f08a48e71611691430</msg>
+<status status="PASS" starttime="20210126 15:03:54.797" endtime="20210126 15:03:54.797"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The cookie value is: ${cookie_value}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.797" endtime="20210126 15:03:54.798"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.796" endtime="20210126 15:03:54.798"></status>
+</kw>
+<kw name="Validate_ResponseContents" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.799" level="INFO">${res_body} = [
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita ...</msg>
+<status status="PASS" starttime="20210126 15:03:54.799" endtime="20210126 15:03:54.799"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>userId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.799" endtime="20210126 15:03:54.800"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.800" endtime="20210126 15:03:54.801"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>title</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.801" endtime="20210126 15:03:54.801"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.801" endtime="20210126 15:03:54.801"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.802" endtime="20210126 15:03:54.802"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.798" endtime="20210126 15:03:54.802"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${json}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.803" level="INFO">${json} = [{'userId': 1, 'id': 1, 'title': 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit', 'body': 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderi...</msg>
+<status status="PASS" starttime="20210126 15:03:54.803" endtime="20210126 15:03:54.803"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${json}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.805" endtime="20210126 15:03:54.809"></status>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<doc>Get Value From JSON using JSONPath</doc>
+<arguments>
+<arg>${json}</arg>
+<arg>$[?(@.id)].id</arg>
+</arguments>
+<assign>
+<var>@{Id_list}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.847" level="INFO">@{Id_list} = [ 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42...</msg>
+<status status="PASS" starttime="20210126 15:03:54.810" endtime="20210126 15:03:54.847"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${Id_list}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.851" endtime="20210126 15:03:54.852"></status>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<arguments>
+<arg>${Id_list}</arg>
+</arguments>
+<assign>
+<var>${length}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.853" level="INFO">Length is 100</msg>
+<msg timestamp="20210126 15:03:54.853" level="INFO">${length} = 100</msg>
+<status status="PASS" starttime="20210126 15:03:54.853" endtime="20210126 15:03:54.853"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>The length of the json,counting by id is : ${length}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.854" endtime="20210126 15:03:54.854"></status>
+</kw>
+<kw name="${i} IN [ ${length} ]" type="for">
+<kw name="${i} = 100" type="foritem">
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${res_body}</var>
+</assign>
+<msg timestamp="20210126 15:03:54.856" level="INFO">${res_body} = [
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita ...</msg>
+<status status="PASS" starttime="20210126 15:03:54.855" endtime="20210126 15:03:54.856"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>userId</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.856" endtime="20210126 15:03:54.856"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>id</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.856" endtime="20210126 15:03:54.856"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>title</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.856" endtime="20210126 15:03:54.856"></status>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<arguments>
+<arg>${res_body}</arg>
+<arg>body</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.856" endtime="20210126 15:03:54.856"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for the keys in Response.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.856" endtime="20210126 15:03:54.858"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.855" endtime="20210126 15:03:54.858"></status>
+</kw>
+<status status="PASS" starttime="20210126 15:03:54.855" endtime="20210126 15:03:54.858"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Validation is done for GET API.</arg>
+</arguments>
+<status status="PASS" starttime="20210126 15:03:54.858" endtime="20210126 15:03:54.858"></status>
+</kw>
+<doc>This test case will validate the Get Respons for the url /posts</doc>
+<tags>
+<tag>APIValidation</tag>
+</tags>
+<status status="PASS" starttime="20210126 15:03:54.612" endtime="20210126 15:03:54.859" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210126 15:03:54.605" endtime="20210126 15:03:54.860"></status>
+</suite>
+<status status="PASS" starttime="20210126 15:03:53.137" endtime="20210126 15:03:54.865"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0">Critical Tests</stat>
+<stat pass="4" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0">APIValidation</stat>
+<stat pass="1" fail="0">Check</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" id="s1" name="TestCases GET">TestCases GET</stat>
+<stat pass="3" fail="0" id="s1-s1" name="With Parameters">TestCases GET.With Parameters</stat>
+<stat pass="1" fail="0" id="s1-s2" name="Without Parameters">TestCases GET.Without Parameters</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210126 15:03:53.117" level="ERROR">Error in file 'C:\Users\renuk\PycharmProjects\Automation2021\TestCases_GET\With_Parameters.robot' on line 81: Non-existing setting 'Arguments'.</msg>
+</errors>
+</robot>
