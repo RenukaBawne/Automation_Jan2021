@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.7.3 on win32)" generated="20210127 15:55:14.278" rpa="false">
+<suite id="s1" name="TC POSTS 1" source="C:\Users\renuk\PycharmProjects\Automation2021\TestCases_GET\TC_POSTS_1.robot">
+<test id="s1-t1" name="TC_08_Validate_Response">
+<kw name="Create Session" library="RequestsLibrary">
+<doc>Create Session: create a HTTP session to a server</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>${Base_URL}</arg>
+</arguments>
+<msg timestamp="20210127 15:55:14.823" level="INFO">Creating Session using : alias=GetSession, url=http://jsonplaceholder.typicode.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20210127 15:55:14.823" endtime="20210127 15:55:14.824"></status>
+</kw>
+<kw name="Get On Session" library="RequestsLibrary">
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<arguments>
+<arg>GetSession</arg>
+<arg>/posts/${Id}</arg>
+</arguments>
+<assign>
+<var>${response}</var>
+</assign>
+<msg timestamp="20210127 15:55:14.912" level="INFO">GET Request : url=http://jsonplaceholder.typicode.com/posts/1 
+ path_url=/posts/1 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20210127 15:55:14.912" level="INFO">GET Response : url=http://jsonplaceholder.typicode.com/posts/1 
+ status=200, reason=OK 
+ headers={'Date': 'Wed, 27 Jan 2021 20:55:13 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Set-Cookie': '__cfduid=dbac713eb6a7a7da2b98461c0de6f69a71611780913; expires=Fri, 26-Feb-21 20:55:13 GMT; path=/; domain=.typicode.com; HttpOnly; SameSite=Lax', 'X-Powered-By': 'Express', 'X-Ratelimit-Limit': '1000', 'X-Ratelimit-Remaining': '999', 'X-Ratelimit-Reset': '1611638856', 'Vary': 'Origin, Accept-Encoding', 'Access-Control-Allow-Credentials': 'true', 'Cache-Control': 'max-age=43200', 'Pragma': 'no-cache', 'Expires': '-1', 'X-Content-Type-Options': 'nosniff', 'Etag': 'W/"124-yiKdLzqO5gfBrJFrcdJ8Yq0LGnU"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'HIT', 'Age': '26379', 'cf-request-id': '07e73a122e0000c5f86f870000000001', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report?s=aUdHgKcFzcq7jMihx6HpOXPCN6CoBZSrJ17AVnlONK91H%2FtJotJp%2Bp1oj2w0tZDNDqf8jdGSxJ34WDTAm7qiJKvzMgxfiohHcgSLfrGsaefcFw%2F4%2B8y0puiFUTkg"}]}', 'NEL': '{"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '61855f96abd1c5f8-EWR', 'Content-Encoding': 'gzip'} 
+ body={
+  "userId": 1,
+  "id": 1,
+  "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+} 
+ </msg>
+<msg timestamp="20210127 15:55:14.912" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20210127 15:55:14.824" endtime="20210127 15:55:14.912"></status>
+</kw>
+<kw name="Response_log" library="Resources">
+<arguments>
+<arg>${response}</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.914" endtime="20210127 15:55:14.915"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.status_code}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.915" endtime="20210127 15:55:14.916"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.headers}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.917" endtime="20210127 15:55:14.918"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${response.cookies}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.918" endtime="20210127 15:55:14.920"></status>
+</kw>
+<status status="PASS" starttime="20210127 15:55:14.913" endtime="20210127 15:55:14.920"></status>
+</kw>
+<kw name="Convert String to JSON" library="JSONLibrary">
+<doc>Convert String to JSON object</doc>
+<arguments>
+<arg>${response.content}</arg>
+</arguments>
+<assign>
+<var>${json}</var>
+</assign>
+<msg timestamp="20210127 15:55:14.926" level="INFO">${json} = {'userId': 1, 'id': 1, 'title': 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit', 'body': 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit...</msg>
+<status status="PASS" starttime="20210127 15:55:14.925" endtime="20210127 15:55:14.926"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${json}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.927" endtime="20210127 15:55:14.927"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${json['userId']}</arg>
+</arguments>
+<assign>
+<var>${get_userId}</var>
+</assign>
+<msg timestamp="20210127 15:55:14.929" level="INFO">${get_userId} = 1</msg>
+<status status="PASS" starttime="20210127 15:55:14.928" endtime="20210127 15:55:14.929"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${json['id']}</arg>
+</arguments>
+<assign>
+<var>${get_id}</var>
+</assign>
+<msg timestamp="20210127 15:55:14.930" level="INFO">${get_id} = 1</msg>
+<status status="PASS" starttime="20210127 15:55:14.930" endtime="20210127 15:55:14.930"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${json['title']}</arg>
+</arguments>
+<assign>
+<var>${get_title}</var>
+</assign>
+<msg timestamp="20210127 15:55:14.932" level="INFO">${get_title} = sunt aut facere repellat provident occaecati excepturi optio reprehenderit</msg>
+<status status="PASS" starttime="20210127 15:55:14.931" endtime="20210127 15:55:14.932"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${json['body']}</arg>
+</arguments>
+<assign>
+<var>${get_body}</var>
+</assign>
+<msg timestamp="20210127 15:55:14.934" level="INFO">${get_body} = quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto</msg>
+<status status="PASS" starttime="20210127 15:55:14.932" endtime="20210127 15:55:14.934"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${get_userId} | ${get_id} | ${get_title} | ${get_body}</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.936" endtime="20210127 15:55:14.937"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${get_title}"=="${EMPTY}"</arg>
+<arg>log to console</arg>
+<arg>Warning : Title is Empty</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.937" endtime="20210127 15:55:14.937"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${get_userId}"=="${EMPTY}"</arg>
+<arg>log to console</arg>
+<arg>Warning : User ID is Empty</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.938" endtime="20210127 15:55:14.938"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>"${get_id}"=="${EMPTY}"</arg>
+<arg>log to console</arg>
+<arg>Warning : ID is Empty</arg>
+</arguments>
+<status status="PASS" starttime="20210127 15:55:14.939" endtime="20210127 15:55:14.939"></status>
+</kw>
+<doc>This test case will validate the keys in Get Response for the url /posts/1</doc>
+<tags>
+<tag>APIValidation</tag>
+</tags>
+<status status="PASS" starttime="20210127 15:55:14.822" endtime="20210127 15:55:14.940" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210127 15:55:14.282" endtime="20210127 15:55:14.942"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">APIValidation</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TC POSTS 1">TC POSTS 1</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
